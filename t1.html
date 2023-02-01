@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <style>
+      .spinning {
+        animation: spin 2s infinite linear;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="greeting">Hello</h2>
+    <input type="text" id="input">
+    <button id="btn">Click</button>
+    <script>
+      greeting = document.querySelector("#greeting");
+      input = document.querySelector("#input");
+      btn = document.querySelector("#btn");
+      btn.onclick = function() {
+        greeting.innerHTML = input.value;
+        greeting.classList.add("spinning");
+      };
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>T7_Pankaj</title>
+    <style>
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      input[type="range"] {
+        width: 200px;
+        margin-bottom: 20px;
+      }
+
+      input[type="number"] {
+        width: 50px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: lightblue;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #result {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-group">
+      <label>Amount:</label>
+      <input type="number" id="amount" min="0" value="100">
+    </div>
+    <div class="form-group">
+      <label>Tip Percentage:</label>
+      <input type="range" id="tipPercentage" min="0" max="100" value="15">
+      <input type="number" id="tipPercentageValue" min="0" max="100" value="15">%
+    </div>
+    <div class="form-group">
+      <label>Number of People:</label>
+      <input type="number" id="numPeople" min="1" value="1">
+    </div>
+    <div class="form-group">
+      <button id="calculateBtn">Calculate Tip</button>
+    </div>
+    <div id="result"></div>
+    <script>
+      amountInput = document.querySelector("#amount");
+      tipPercentageInput = document.querySelector("#tipPercentage");
+      tipPercentageValueInput = document.querySelector("#tipPercentageValue");
+      numPeopleInput = document.querySelector("#numPeople");
+      calculateBtn = document.querySelector("#calculateBtn");
+      resultDiv = document.querySelector("#result");
+      tipPercentageInput.oninput = function() {
+        tipPercentageValueInput.value = tipPercentageInput.value;
+      };
+      tipPercentageValueInput.oninput = function() {
+        tipPercentageInput.value = tipPercentageValueInput.value;
+      };
+      calculateBtn.onclick = function() {
+        amount = Number.parseFloat(amountInput.value);
+        tipPercentage = Number.parseFloat(tipPercentageInput.value) / 100;
+        numPeople = Number.parseInt(numPeopleInput.value);
+        tip = amount * tipPercentage;
+        totalTip = tip / numPeople;
+        resultDiv.innerHTML = `Each person's tip $${totalTip.toFixed(2)}`;
+      }
+      </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <button onclick="makePage();">Click Here</button>
+        <script>
+            function makePage() {
+            header = document.createElement("h1");
+            header.innerHTML = "I am an H1";
+            document.body.appendChild(header);
+            list = document.createElement("ol");
+            item1 = document.createElement("li");
+            item1.innerHTML = "This is First";
+            list.appendChild(item1);
+            item2 = document.createElement("li");
+            item2.innerHTML = "This is Second";
+            list.appendChild(item2);
+            document.body.appendChild(list);
+            }
+        </script>
+    </body>
+</html>

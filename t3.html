@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      li {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Increment</button>
+    <ul id="numbers"></ul>
+    <script>
+      btn = document.querySelector("#btn");
+      numbersList = document.querySelector("#numbers");
+      countValue = 0;
+      btn.onclick = function() {
+        countValue += 1;
+        newListItem = document.createElement("li");
+        newListItem.innerHTML = countValue;
+        newListItem.style.fontSize = countValue * 20 + "px";
+        numbersList.appendChild(newListItem);
+      };
+    </script>
+  </body>
+</html>

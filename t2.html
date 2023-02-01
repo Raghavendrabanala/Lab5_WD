@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #count {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Increment</button>
+    <p id="count">0</p>
+    <p id="para">Web Technology is my favourite subject.</p>
+
+    <script>
+      btn = document.querySelector("#btn");
+      count = document.querySelector("#count");
+      countValue = 0;
+
+      btn.onclick = function() {
+        countValue += 1;
+        count.innerHTML = countValue;
+        para.style.fontSize = countValue * 20 + "px";
+      };
+    </script>
+  </body>
+</html>
+
